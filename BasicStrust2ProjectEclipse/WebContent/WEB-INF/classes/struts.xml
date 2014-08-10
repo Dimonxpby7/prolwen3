@@ -5,43 +5,49 @@
 
 <struts>
 
-    <constant name="struts.devMode" value="true" />
+	<constant name="struts.devMode" value="true" />
 
-    <package name="basicstruts2" extends="struts-default" namespace="/">
-	<result-types>
-  <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult"/>
-	</result-types>
-        <!--
-        If no class attribute is specified the framework will assume success and
-        render the result index.jsp
-        If no name value for the result node is specified the success value is the default
-        -->
-        <action name="index" method="execute" class="com.tutorials4u.actions.LinkAction">
-            	<result name="success" type="tiles">hibernate</result>
-        </action>
+	<package name="basicstruts2" extends="struts-default"
+		namespace="/">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<!-- If no class attribute is specified the framework will assume success 
+			and render the result index.jsp If no name value for the result node is specified 
+			the success value is the default -->
+		<action name="index" method="execute"
+			class="com.tutorials4u.actions.LinkAction">
+			<result name="success" type="tiles">hibernate</result>
+		</action>
 
-        <action name="">
-            <result>/WEB-INF/results/index.jsp</result>
-        </action>
-		
-        <!--
-        If the URL is hello.action the call the execute method of class HelloWorldAction.
-        If the result returned by the execute method is success render the HelloWorld.jsp
-        -->
-        <action name="hello" class="com.nabisoft.struts2.demo.action.HelloWorldAction" method="execute">
-            <result name="success" type="tiles">tilesWorks</result>
-            <result name="input">/WEB-INF/results/index.jsp</result>
-        </action>
-        <action name="*Link" method="{1}" class="com.tutorials4u.actions.LinkAction">
+		<action name="">
+			<result>/WEB-INF/results/index.jsp</result>
+		</action>
+
+		<!-- If the URL is hello.action the call the execute method of class HelloWorldAction. 
+			If the result returned by the execute method is success render the HelloWorld.jsp -->
+		<action name="hello"
+			class="com.nabisoft.struts2.demo.action.HelloWorldAction" method="execute">
+			<result name="success" type="tiles">tilesWorks</result>
+			<result name="input">/WEB-INF/results/index.jsp</result>
+		</action>
+		<action name="*Link" method="{1}"
+			class="com.tutorials4u.actions.LinkAction">
 			<result name="welcome" type="tiles">welcome</result>
 			<result name="struts" type="tiles">struts</result>
 			<result name="hibernate" type="tiles">hibernate</result>
 		</action>
-	    </package>
+	</package>
 
-<package name="common" namespace="/" extends="struts-default">
-	<action name="SayWelcome" class="com.tutorials4u.actions.DocumentLibraryAction" method="execute">
-		<result>documents.jsp</result>
-	</action>
-</package>
+	<package name="common" namespace="/" extends="struts-default">
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		<action name="SayWelcome" class="com.tutorials4u.actions.DocumentLibraryAction"
+			method="execute">
+			<result name="success" type="tiles">document-library</result>
+		</action>
+	</package>
 </struts>

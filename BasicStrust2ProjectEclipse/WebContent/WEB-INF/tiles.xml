@@ -29,4 +29,8 @@
       <put-attribute name="title"  value="Hibernate Tutorial"/>
       <put-attribute name="body"   value="/hibernate_tutorial.jsp"/>      
   </definition>
+  <definition name="document-library" extends="baseLayout">
+      <put-attribute name="title"  value="Document Library"/>
+      <put-attribute name="body"   value="/documentLibrary.jsp"/>      
+  </definition>
   </tiles-definitions>
