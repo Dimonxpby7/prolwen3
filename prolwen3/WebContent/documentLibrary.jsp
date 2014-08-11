@@ -1,14 +1,16 @@
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-   "http://www.w3.org/TR/html4/loose.dtd">
-
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <p>Here Document Library !!!</p>
-    </body>
-</html>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page"
+	xmlns:c="http://java.sun.com/jsp/jstl/core" version="2.0">
+	<jsp:directive.page contentType="text/html; charset=Utf-8" />
+	<html>
+<head>
+<title>all files</title>
+</head>
+<jsp:text>is File</jsp:text>
+<jsp:useBean id="filesArr" class="com.files.ProlwenFile" />
+<c:set var="items" value="${fileArr.getFDList}" scope="session" />
+<c:forEach var="id" items="${items}">
+	<a href="${id.getAbsolutePath}"><c:out value="${id.getName}" /></a>
+	<br />
+</c:forEach>
+	</html>
+</jsp:root>
