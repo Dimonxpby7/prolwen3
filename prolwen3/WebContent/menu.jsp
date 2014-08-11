@@ -2,4 +2,4 @@
 
 <a href="<s:url action="strutsLink"/>" >Struts Tutorial</a><br>
 <a href="<s:url action="hibernateLink"/>" >Hibernate Tutorial</a><br>
-<a href="<s:url action="SayWelcome"/>" >WORKING!</a><br>
+<a href="<s:url action="SayWelcome"/>" >Document Library</a><br>
