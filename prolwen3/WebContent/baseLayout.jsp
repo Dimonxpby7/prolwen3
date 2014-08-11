@@ -44,12 +44,33 @@
 	border-left: 1px solid #222222;
 }
 
-.statsPanel {
-	background-color: #444444;
-	border-top: 1px solid 000000;
-	bottom: 0;
-}
+/* Page stats bar */
+.statsPanel {background-color: #444444; border-top: 1px solid #111111; bottom: 0; height: 49px; left: 260px; position: absolute; right: 0;}
+.showMenu {display: none; float: left;}
+
+.mainMenuHider {height: 50px; float: left;}
+.mainMenuHider.hideMenu {float: left;}
+
+/* Minified window state */
+.minified .mainMenu {display: none;}
+.minified .mainContent {left: 0;}
+.minified .miniMenu {display: block;}
+.minified #pageTitle {display: none;}
+.minified .mainLogo {display: none;}
+.minified .miniLogo {display: block;}
+.minified .mainMenuHider {display: none;}
+.minified .statsPanel .showMenu {display: block;}
+.minified .statsPanel {left: 0;}
 </style>
+<script type="text/javascript">
+function hideMainMenu(){
+    document.getElementById('mainWrapper').className='minified';
+}
+function showMainMenu(){
+    document.getElementById('mainWrapper').className='';
+}
+
+</script>
 <head />
 <body>
 	<div id="mainWrapper" class="">
