@@ -1,38 +1,35 @@
 package com.prolwen.actions;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.files.ProlwenFile;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.prolwen.beans.LibraryBean;
 
 @SuppressWarnings("serial")
-public class DocumentLibraryAction extends ActionSupport implements ModelDriven<LibraryBean> {
+public class DocumentLibraryAction extends ActionSupport {
 	
-	private LibraryBean libraryBean = new LibraryBean(); 
-	
+	ProlwenFile pf;
 	/* 
 	 * VEEW LIBRARY
 	 */
 	@Override
 	public String execute() {
-		List<String> collection = getListPath();
-		getModel().setPath(collection);
-		getModel().setValue("olala!");
-		return "success";
+		String path = "C:\\Users\\Juger\\Downloads";
+		pf = new ProlwenFile(path);
+		return SUCCESS;
 	}
 
-	private List<String> getListPath() {
-		List<String> collection = new ArrayList<String>();
-		collection.add("first");
-		collection.add("second");
-		return collection;
-	}
+	
 
-	@Override
-	public LibraryBean getModel() {
-		return libraryBean;
+	public ProlwenFile getProlwenFile() {
+		return pf;
+	}
+	public void setProlwenFile(ProlwenFile pf){
+		this.pf = pf;
 	}
 
 }

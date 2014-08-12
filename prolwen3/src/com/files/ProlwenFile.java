@@ -2,26 +2,37 @@ package com.files;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
-@SuppressWarnings("unused")
+
 public class ProlwenFile {
+
+	private File file;
+	private File[] arrFile;
 	
-	private File file = null;
-	private File[] thisFile = null;
-	private String path = null;
-	
-	public ProlwenFile(){
+	public File[] getArrFile() {
+		return arrFile;
+	}
+
+	public void setValue(File[] arrFile) {
+		this.arrFile = arrFile;
 	}
 	
-	public File[] getFDList(){
-		path = "WebContent" + File.separator + "library";
+	public ProlwenFile(String path){
 		file = new File(path);
-		if(file.isDirectory() && file.exists())
-			thisFile = file.listFiles();
-		return thisFile;
-		
+		arrFile = file.listFiles();
 	}
+
+	public File getFile() {
+		return file;
+	}
+
+	public void setFile(File file) {
+		this.file = file;
+	}
+
 	
-	
+
+
 
 }
