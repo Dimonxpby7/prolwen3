@@ -12,7 +12,6 @@ public class DocumentLibraryAction extends ActionSupport implements ModelDriven<
 	
 	private LibraryBean libraryBean = new LibraryBean(); 
 	
-	
 	/* 
 	 * VEEW LIBRARY
 	 */
