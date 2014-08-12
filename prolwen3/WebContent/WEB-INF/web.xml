@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>BasicStrust2ProjectEclipse</display-name>
-  
-    <filter>
-        <filter-name>struts2</filter-name>
-        <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
-    </filter>
+<web-app version="2.5" xmlns="/httpjava.sun.com/xml/ns/javaee"
+	xmlns:xsi="/httpwww.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="/httpjava.sun.com/xml/ns/javaee /httpjava.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>BasicStrust2ProjectEclipse</display-name>
+
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
+	</filter>
 
 	<context-param>
 		<param-name>org.apache.tiles.impl.BasicTilesContainer.DEFINITIONS_CONFIG</param-name>
@@ -16,9 +18,18 @@
 		<listener-class>org.apache.struts2.tiles.StrutsTilesListener</listener-class>
 	</listener>
 
-    <filter-mapping>
-        <filter-name>struts2</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-  
+	<filter-mapping>
+		<filter-name>struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+<jsp-config>
+	<taglib>
+		<taglib-uri>
+			http://java.sun.com/jsp/jstl/core
+		</taglib-uri>
+		<taglib-location>
+			lib/tld/c.tld
+		</taglib-location>
+	</taglib>
+</jsp-config>
 </web-app>
