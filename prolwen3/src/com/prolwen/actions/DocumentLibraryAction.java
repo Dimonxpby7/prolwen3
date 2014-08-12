@@ -1,24 +1,39 @@
 package com.prolwen.actions;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.opensymphony.xwork2.ActionSupport;
+import com.opensymphony.xwork2.ModelDriven;
+import com.prolwen.beans.LibraryBean;
 
 @SuppressWarnings("serial")
-public class DocumentLibraryAction extends ActionSupport {
+public class DocumentLibraryAction extends ActionSupport implements ModelDriven<LibraryBean> {
 	
-	private String value;
+	private LibraryBean libraryBean = new LibraryBean(); 
 	
+	
+	/* 
+	 * VEEW LIBRARY
+	 */
 	@Override
 	public String execute() {
-		setValue("olala");
+		List<String> collection = getListPath();
+		getModel().setPath(collection);
+		getModel().setValue("olala!");
 		return "success";
 	}
 
-	public String getValue() {
-		return value;
+	private List<String> getListPath() {
+		List<String> collection = new ArrayList<String>();
+		collection.add("first");
+		collection.add("second");
+		return collection;
 	}
 
-	public void setValue(String value) {
-		this.value = value;
+	@Override
+	public LibraryBean getModel() {
+		return libraryBean;
 	}
 
 }
