@@ -6,10 +6,9 @@
 <head>
 <title>all files</title>
 </head>
-<jsp:text>is File</jsp:text>
-<c:forEach var="p" items="${pf.getArrFile}">
-	<input value="${p}" />
-	<br />
+<c:forEach var="fileBean" items="${filesPDF}">
+	<a href="#">${fileBean.name}</a>
+	<br/>
 </c:forEach>
 	</html>
 </jsp:root>

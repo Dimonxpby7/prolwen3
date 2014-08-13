@@ -1,10 +1,8 @@
 package com.prolwen.actions;
 
+import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
@@ -12,46 +10,31 @@ import com.prolwen.beans.FileBean;
 import com.prolwen.beans.LibraryBean;
 
 @SuppressWarnings("serial")
-public class DocumentLibraryAction extends ActionSupport implements ModelDriven<LibraryBean> {
-	
+public class DocumentLibraryAction extends ActionSupport implements
+		ModelDriven<LibraryBean> {
+
 	private LibraryBean libraryBean = new LibraryBean();
-	
-	/* 
+
+	/*
 	 * VEEW LIBRARY
 	 */
 	@Override
 	public String execute() {
-		Map<String, List<FileBean>> library = getMaxMethod();
-		getModel().setFilesPDF(library.get("pdf"));
-		getModel().setFilesPDF(library.get("djvu"));
-		getModel().setFilesPDF(library.get("xml"));
+		
+		getModel().setFilesPDF(getLibrary(new File[5])); //массив File уже состоит только из пдф
+		getModel().setFilesDJVU(getLibrary(new File[5])); //массив File уже состоит только из djvu
+		getModel().setFilesXML(getLibrary(new File[5]));  //массив File уже состоит только из xml
 		return SUCCESS;
 	}
 
-	private Map<String, List<FileBean>> getMaxMethod() {
-		Map<String, List<FileBean>> library = new HashMap<String, List<FileBean>>();
-		
-		List<FileBean> filesPDF = new ArrayList<FileBean>();
-		for (int i = 0; i < 5; i++) {
-			filesPDF.add(new FileBean("pdf" + i, "file" + i));
+	public static List<FileBean> getLibrary(File[] files) {
+		List<FileBean> collection = new ArrayList<FileBean>();
+		for (File file : files) {
+			collection.add(new FileBean(file.getName(),file.getPath()));
 		}
-		
-		List<FileBean> filesDJVU = new ArrayList<FileBean>();
-		for (int i = 0; i < 5; i++) {
-			filesDJVU.add(new FileBean("djvu" + i, "file" + i));
-		}
-				
-		library.put("PDF", filesDJVU);
-		
-		List<FileBean> filesXML = new ArrayList<FileBean>();
-		for (int i = 0; i < 5; i++) {
-			filesDJVU.add(new FileBean("xml" + i, "file" + i));
-		}
-		library.put("PDF", filesXML);
-		
-		return library;
+		return collection;
 	}
-
+	
 	@Override
 	public LibraryBean getModel() {
 		return libraryBean;
