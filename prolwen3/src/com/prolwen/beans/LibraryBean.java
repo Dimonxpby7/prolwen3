@@ -3,22 +3,27 @@ package com.prolwen.beans;
 import java.util.List;
 
 public class LibraryBean {
-	private String value;
-	private List<String> path;
+	private List<FileBean> filesPDF;
+	private List<FileBean> filesDJVU;
+	private List<FileBean> filesXML;
 	
-	public String getValue() {
-		return value;
+	public List<FileBean> getFilesPDF() {
+		return filesPDF;
 	}
-
-	public void setValue(String value) {
-		this.value = value;
+	public void setFilesPDF(List<FileBean> filesPDF) {
+		this.filesPDF = filesPDF;
 	}
-
-	public List<String> getPath() {
-		return path;
+	public List<FileBean> getFilesDJVU() {
+		return filesDJVU;
 	}
-
-	public void setPath(List<String> path) {
-		this.path = path;
+	public void setFilesDJVU(List<FileBean> filesDJVU) {
+		this.filesDJVU = filesDJVU;
 	}
+	public List<FileBean> getFilesXML() {
+		return filesXML;
+	}
+	public void setFilesXML(List<FileBean> filesXML) {
+		this.filesXML = filesXML;
+	}
+	
 }

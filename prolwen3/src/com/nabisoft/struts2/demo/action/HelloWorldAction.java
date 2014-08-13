@@ -1,8 +1,10 @@
 package com.nabisoft.struts2.demo.action;
 
-import com.opensymphony.xwork2.ActionSupport;
 import java.util.Date;
 
+import com.opensymphony.xwork2.ActionSupport;
+
+@SuppressWarnings("serial")
 public class HelloWorldAction extends ActionSupport {
 
     private String message;
