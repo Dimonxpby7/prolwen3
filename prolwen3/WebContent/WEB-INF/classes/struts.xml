@@ -45,9 +45,11 @@
 			<result-type name="tiles"
 				class="org.apache.struts2.views.tiles.TilesResult" />
 		</result-types>
-		<action name="SayWelcome" class="com.prolwen.actions.DocumentLibraryAction"
-			method="execute">
+		<action name="SayWelcome" class="com.prolwen.actions.DocumentLibraryAction" method="execute">
 			<result name="success" type="tiles">document-library</result>
+		</action>
+		<action name="downloader" class="com.prolwen.Utils.ProlwenDownloader" method="execute">
+			<result>/downloader.jsp</result>
 		</action>
 	</package>
 </struts>

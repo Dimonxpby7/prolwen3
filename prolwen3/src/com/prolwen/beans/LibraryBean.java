@@ -6,6 +6,7 @@ public class LibraryBean {
 	private List<FileBean> filesPDF;
 	private List<FileBean> filesDJVU;
 	private List<FileBean> filesXML;
+	private List<FileBean> filesJPG;
 	
 	public List<FileBean> getFilesPDF() {
 		return filesPDF;
@@ -24,6 +25,12 @@ public class LibraryBean {
 	}
 	public void setFilesXML(List<FileBean> filesXML) {
 		this.filesXML = filesXML;
+	}
+	public List<FileBean> getFilesJPG() {
+		return filesJPG;
+	}
+	public void setFilesJPG(List<FileBean> filesJPG) {
+		this.filesJPG = filesJPG;
 	}
 	
 }
