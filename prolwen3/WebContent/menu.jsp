@@ -8,8 +8,8 @@
 a {color: #63a3d8; outline: hidden;}
 a:hover {color: #96c8f3; outline: hidden;}
 a:active {top: 1px;}
-a.miText {color: #000000; min-height: 10px; padding: 10px 10px 10px 30px; display: block; text-decoration: none;}
-a.miText:hover {background-color: #2a2a2a; color: #96c8f3;}
+a.miText {color: #00EBFF; min-height: 10px; padding: 10px 10px 10px 30px; display: block; text-decoration: none;}
+a.miText:hover {background-color: #FF3D00; color: #FFFFFF;}
 .miParent .submenu .menuItem > a.miText {padding-left: 30px;}
 </style>
 </head>

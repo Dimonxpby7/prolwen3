@@ -3,6 +3,8 @@ package com.prolwen.actions;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.ServletContext;
 
@@ -10,7 +12,7 @@ import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import com.prolwen.Utils.ProlwenSearcher;
+import com.prolwen.Utils.FileManager;
 import com.prolwen.beans.FileBean;
 import com.prolwen.beans.LibraryBean;
 
@@ -27,21 +29,26 @@ public class DocumentLibraryAction extends ActionSupport implements
 	public String execute() {
 		String path = "/library/";
 		ServletContext context = ServletActionContext.getServletContext();
-		String realPath = context.getRealPath(path);
-		List<File> jpgFiles = ProlwenSearcher.getInstance(realPath, ProlwenSearcher.Format.JPG).getFilesAsList();
-		
-		getModel().setFilesJPG(buildFileBeans(jpgFiles));
+		FileManager fm = FileManager.getInstance();
+		getModel().setFilesJPG(buildFileBeans(fm.getFilesAsMap(context.getRealPath(path), path, FileManager.Format.JPG)));
 		 return SUCCESS;
 	}
 
-	public static List<FileBean> buildFileBeans(List<File> files) {
+	public  List<FileBean> buildFileBeans(Map<String,File> map) {
 		List<FileBean> collection = new ArrayList<FileBean>();
-		for (File file : files) {
-			collection.add(new FileBean(file.getName(), file.getPath()));
+		Set<String> set  = map.keySet();
+		for (String canonicalPath : set) {
+			File file = map.get(canonicalPath);
+			collection.add(new FileBean(file.getName(),canonicalPath,calculateSize(file.length())));
 		}
+		
 		return collection;
 	}
 
+	public String calculateSize(long length){
+		double size  = length/1024;
+		return String.valueOf(size) + " KB";
+	}
 
 	@Override
 	public LibraryBean getModel() {

@@ -1,4 +1,4 @@
-<div align="center">&copy; tutorials4u.net</div>
+<div align="center">&copy; 2014 </div>
 <div class="mainMenuHider">
 	<div class="hideMenu">
 		<a href="#" onclick="hideMainMenu(); return false;"><span>Hide menu</span></a>

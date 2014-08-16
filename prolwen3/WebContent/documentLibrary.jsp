@@ -2,6 +2,8 @@
 <%@taglib uri="/struts-tags" prefix="s"%>
 <head>
 <style type="text/css">
+
+.infoBlock {float: left; padding: 20px 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; border-right: 1px solid #FF3D00;}
 .ibTitle:hover .ibEdit {
 	opacity: 1;
 }
@@ -12,15 +14,15 @@
 }
 
 .ibItem {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #FF3D00;
 	float: left;
-	padding: 10px 0;
-	width: 100%;
+	padding: 5px 0;
+	width: 30%;
 	overflow: hidden;
 }
 
 .ibItem:hover {
-	background-color: #fdfdfd;
+	background-color: #FF3D00;
 }
 
 .ibItemName {
@@ -39,17 +41,21 @@
 </head>
 <html>
 <body>
-	<div class="ibContent">
-		<c:forEach items="${filesJPG}" var="bean">
-			<div class="ibItem">
-				<div class="ibItemName">
-					<a href="#" id="${bean.path}">${bean.name}</a>
-				</div>
-				<div class="ibItemValue">8 Mb</div>
+	<div class="infoBlock" style="width: 900px;">
+		<div class="ibTitle">   Store pictures
+			<div class="ibContent">
+				<c:forEach items="${filesJPG}" var="bean">
+					<div class="ibItem">
+						<div class="ibItemName">
+							<a href="${bean.path}" target="_blank" download="">${bean.name}
+							</a>
+						</div>
+						<div class="ibItemValue">${bean.length}</div>
+					</div>
+				</c:forEach>
 			</div>
-		</c:forEach>
+		</div>
 	</div>
-	<a href="<s:url action="downloader"/>" >Download</a>
 </body>
 </html>
 

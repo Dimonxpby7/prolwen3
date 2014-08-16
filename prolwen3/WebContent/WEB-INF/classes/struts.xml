@@ -48,8 +48,5 @@
 		<action name="SayWelcome" class="com.prolwen.actions.DocumentLibraryAction" method="execute">
 			<result name="success" type="tiles">document-library</result>
 		</action>
-		<action name="downloader" class="com.prolwen.Utils.ProlwenDownloader" method="execute">
-			<result>/downloader.jsp</result>
-		</action>
 	</package>
 </struts>

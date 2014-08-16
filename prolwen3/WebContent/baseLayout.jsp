@@ -16,36 +16,45 @@
 }
 
 .mainHeader {
-	background-color: #00CCFF;
-	border-bottom: 1px solid #222222;
+	background-color: #444444;
+	border-bottom: 1px solid #FF3D00;
 	height: 49px;
 	left: 0;
 	position: absolute;
 	right: 0;
 	top: 0;
+	font-size: 35px;
+	font-family: monospace;
+	color: #FF3D00;
 }
 
 .mainMenu {
-	background-color: #FFDDFF;
+	background-color: #444444;
 	bottom: 0;
 	left: 0;
 	position: absolute;
 	top: 50px;
 	width: 260px;
+	font-family: monospace;
+	color: #FF3D00;
+	font-size: 18px;
 }
 
 .mainContent {
-	background-color: #FFFF00;
+	background-color: #000000;
 	bottom: 50px;
 	left: 260px;
 	position: absolute;
 	right: 0;
 	top: 50px;
-	border-left: 1px solid #222222;
+	border-left: 1px solid #FF3D00;
+	font-family: monospace;
+	color: #00EBFF;
+	font-size: 18px;
 }
 
 /* Page stats bar */
-.statsPanel {background-color: #444444; border-top: 1px solid #111111; bottom: 0; height: 49px; left: 260px; position: absolute; right: 0;}
+.statsPanel {background-color: #444444; border-top: 1px solid #FF3D00; bottom: 0; height: 49px; left: 260px; position: absolute; right: 0;}
 .showMenu {display: none; float: left;}
 
 .mainMenuHider {height: 50px; float: left;}
