@@ -34,6 +34,7 @@ public class DocumentLibraryAction extends ActionSupport implements
 		 return SUCCESS;
 	}
 
+	
 	public  List<FileBean> buildFileBeans(Map<String,File> map) {
 		List<FileBean> collection = new ArrayList<FileBean>();
 		Set<String> set  = map.keySet();
