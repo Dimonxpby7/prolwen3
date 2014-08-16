@@ -47,9 +47,7 @@
 	right: 0;
 	top: 50px;
 	border-left: 1px solid #FF3D00;
-	font-family: monospace;
 	color: #00EBFF;
-	font-size: 18px;
 }
 
 /* Page stats bar */

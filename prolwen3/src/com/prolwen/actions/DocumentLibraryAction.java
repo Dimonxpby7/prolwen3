@@ -1,6 +1,12 @@
 package com.prolwen.actions;
 
 import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.attribute.FileTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -40,8 +46,27 @@ public class DocumentLibraryAction extends ActionSupport implements
 		Set<String> set  = map.keySet();
 		for (String canonicalPath : set) {
 			File file = map.get(canonicalPath);
-					
-			collection.add(new FileBean(file.getName(),canonicalPath,calculateSize(file.length()),"THIS INFO"));
+			Path path = Paths.get(file.getPath());
+			
+			FileTime lasTime = null;
+			try {
+				lasTime = Files.getLastModifiedTime(path,LinkOption.NOFOLLOW_LINKS);
+			} catch (IOException e) {
+				System.out.println("Not define last modified time for file.");//Logger
+				e.printStackTrace();
+			} 
+			
+			FileBean bean = new FileBean.Builder(file.getName(),canonicalPath)
+												.size(calculateSize(file.length()))
+												.canonicalPath(canonicalPath)
+												.fileSystem(path.getFileSystem().toString())
+												.pathParent(canonicalPath.substring(0,canonicalPath.indexOf(path.getFileName().toString())))
+												.isExecutable(Files.isExecutable(path))
+												.isReadable(Files.isReadable(path))
+												.isWritable(Files.isWritable(path))
+												.lastModifiedTime(String.valueOf(lasTime))
+												.build();
+			collection.add(bean);
 		}
 		
 		return collection;

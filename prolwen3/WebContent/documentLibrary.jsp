@@ -17,7 +17,7 @@
 	border-top: 1px solid #FF3D00;
 	float: left;
 	padding: 5px 0;
-	width: 30%;
+	width: 32%;
 	overflow: hidden;
 }
 
@@ -50,10 +50,10 @@
 				<c:forEach items="${filesJPG}" var="bean">
 					<div class="ibItem">
 				<div class="ibItemName" >
-					<a href="${bean.path}" target="_blank" download="" style="color: #ffffff;" title="${bean.description}"> ${bean.name}
+					<a href="${bean.path}" target="_blank" download="" style="color: #ffffff;" title="${bean}"> ${bean.name}
 					</a>
 				</div>
-						<div class="ibItemValue">${bean.length}</div>
+						<div class="ibItemValue">${bean.size}</div>
 					</div>
 				</c:forEach>
 			</div>
