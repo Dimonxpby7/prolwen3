@@ -30,7 +30,7 @@ public class DocumentLibraryAction extends ActionSupport implements
 		String path = "/library/";
 		ServletContext context = ServletActionContext.getServletContext();
 		FileManager fm = FileManager.getInstance();
-		getModel().setFilesJPG(buildFileBeans(fm.getFilesAsMap(context.getRealPath(path), path, FileManager.Format.JPG)));
+		getModel().setFilesJPG(buildFileBeans(fm.getFilesAsMap(context.getRealPath(path), path, FileManager.Format.ALL)));
 		 return SUCCESS;
 	}
 

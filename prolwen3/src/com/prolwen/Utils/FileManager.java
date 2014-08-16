@@ -8,7 +8,7 @@ public class FileManager {
 	private static FileManager self = null;
 
 	public static enum Format {
-		PDF, CSV, XML, TXT, JPG, HTML, MP3;
+		PDF, CSV, XML, TXT, JPG, HTML, MP3,ALL;
 	}
 
 	/**

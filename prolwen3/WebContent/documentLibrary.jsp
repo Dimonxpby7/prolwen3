@@ -27,16 +27,21 @@
 
 .ibItemName {
 	float: left;
-	width: 219px;
+	width: 240px;
 	color: #888888;
 	overflow: hidden;
+	text-align: right;
 }
 
 .ibItemValue {
 	float: left;
 	width: 220px;
 	margin-left: 20px;
+	text-align: right;
 }
+
+
+
 </style>
 </head>
 <html>
@@ -47,8 +52,7 @@
 				<c:forEach items="${filesJPG}" var="bean">
 					<div class="ibItem">
 						<div class="ibItemName">
-							<a href="${bean.path}" target="_blank" download="">${bean.name}
-							</a>
+							<a href="${bean.path}" target="_blank" download="" style="color: #ffffff;" >${bean.name} </a>
 						</div>
 						<div class="ibItemValue">${bean.length}</div>
 					</div>
