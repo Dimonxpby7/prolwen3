@@ -5,11 +5,13 @@ public class FileBean {
 	private String path;
 	private String name;
 	private String length;
+	private String description;
 	
-	public FileBean(String name, String path,String length){
+	public FileBean(String name, String path,String length, String description){
 		setName(name);
 		setPath(path);
 		setLength(length);
+		setDescription(description);
 	}
 	
 	public String getPath() {
@@ -31,6 +33,14 @@ public class FileBean {
 
 	public void setLength(String length) {
 		this.length = length;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
 	

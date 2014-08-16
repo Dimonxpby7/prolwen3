@@ -20,11 +20,10 @@
 	border-bottom: 1px solid #FF3D00;
 	height: 49px;
 	left: 0;
-	position: absolute;
+	position: relative;
 	right: 0;
-	top: 0;
-	font-size: 35px;
-	font-family: monospace;
+	top: 10px;
+	font-size: 26px;
 	color: #FF3D00;
 }
 

@@ -16,7 +16,7 @@ a.miText:hover {background-color: #FF3D00; color: #FFFFFF;}
 <html>
 <body>
 	<div class="menuItem">
-		<a href="<s:url action="strutsLink"/>" class="miText">Struts Tutorial</a>
+		<a href="<s:url action="strutsLink"/>" class="miText">Welcome to PROLWEN</a>
 	</div>
 	<div class="menuItem">
 		<a href="<s:url action="hibernateLink"/>" class="miText">Hibernate Tutorial</a>

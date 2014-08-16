@@ -39,7 +39,8 @@ public class DocumentLibraryAction extends ActionSupport implements
 		Set<String> set  = map.keySet();
 		for (String canonicalPath : set) {
 			File file = map.get(canonicalPath);
-			collection.add(new FileBean(file.getName(),canonicalPath,calculateSize(file.length())));
+					
+			collection.add(new FileBean(file.getName(),canonicalPath,calculateSize(file.length()),"THIS INFO"));
 		}
 		
 		return collection;

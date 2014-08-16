@@ -40,8 +40,6 @@
 	text-align: right;
 }
 
-
-
 </style>
 </head>
 <html>
@@ -51,15 +49,18 @@
 			<div class="ibContent">
 				<c:forEach items="${filesJPG}" var="bean">
 					<div class="ibItem">
-						<div class="ibItemName">
-							<a href="${bean.path}" target="_blank" download="" style="color: #ffffff;" >${bean.name} </a>
-						</div>
+				<div class="ibItemName" >
+					<a href="${bean.path}" target="_blank" download="" style="color: #ffffff;" title="${bean.description}"> ${bean.name}
+					</a>
+				</div>
 						<div class="ibItemValue">${bean.length}</div>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 	</div>
+	
+	
 </body>
 </html>
 
