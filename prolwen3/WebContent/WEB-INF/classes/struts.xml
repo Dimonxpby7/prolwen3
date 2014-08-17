@@ -18,7 +18,7 @@
 			the success value is the default -->
 		<action name="index" method="execute"
 			class="com.tutorials4u.actions.LinkAction">
-			<result name="success" type="tiles">hibernate</result>
+			<result name="success" type="tiles">struts</result>
 		</action>
 
 		<action name="">
