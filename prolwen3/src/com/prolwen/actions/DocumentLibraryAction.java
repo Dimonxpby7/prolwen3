@@ -73,8 +73,13 @@ public class DocumentLibraryAction extends ActionSupport implements
 	}
 
 	public String calculateSize(long length){
+		if(length>=0 && length <=1048576){
 		double size  = length/1024;
 		return String.valueOf(size) + " KB";
+	}else{
+		float size = (float) length/1048576;
+		return String.valueOf(size) + " MB";
+		}
 	}
 
 	@Override
