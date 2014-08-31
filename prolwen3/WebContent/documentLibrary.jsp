@@ -1,9 +1,20 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="/struts-tags" prefix="s"%>
+
+
+
 <head>
 <style type="text/css">
+.infoBlock {
+	float: left;
+	padding: 20px 10px;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
+	border-right: 1px solid #FF3D00;
+}
 
-.infoBlock {float: left; padding: 20px 10px; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box; border-right: 1px solid #FF3D00;}
 .ibTitle:hover .ibEdit {
 	opacity: 1;
 }
@@ -39,28 +50,28 @@
 	margin-left: 20px;
 	text-align: right;
 }
-
 </style>
 </head>
 <html>
 <body>
 	<div class="infoBlock" style="width: 900px;">
-		<div class="ibTitle">   Store pictures
+		<div class="ibTitle">
+			Store pictures
 			<div class="ibContent">
 				<c:forEach items="${filesJPG}" var="bean">
 					<div class="ibItem">
-				<div class="ibItemName" >
-					<a href="${bean.path}" target="_blank" download="" style="color: #ffffff;" title="${bean}"> ${bean.name}
-					</a>
-				</div>
+						<div class="ibItemName">
+							<a href="${bean.path}" target="_blank" download=""
+								style="color: #ffffff;" title="${bean}"> ${bean.name} </a>
+						</div>
 						<div class="ibItemValue">${bean.size}</div>
 					</div>
 				</c:forEach>
 			</div>
 		</div>
 	</div>
-	
-	
+
+
 </body>
 </html>
 
